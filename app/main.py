@@ -3,6 +3,7 @@ from fastapi.responses import JSONResponse
 
 from app.database import Base, engine
 from app.models import product, user  # noqa: F401 — registers models with Base.metadata
+from app.routes.agent import router as agent_router
 from app.routes.auth import router as auth_router
 from app.routes.products import router as products_router
 
@@ -22,6 +23,7 @@ async def http_exception_handler(request: Request, exc: HTTPException):
 
 app.include_router(auth_router, prefix="/auth", tags=["Auth"])
 app.include_router(products_router, prefix="/products", tags=["Products"])
+app.include_router(agent_router, prefix="/agent", tags=["Agent"])
 
 
 @app.get("/")

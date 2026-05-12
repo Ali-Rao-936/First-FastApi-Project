@@ -10,3 +10,7 @@ DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:y1Hr19R00wolYA1F
 SECRET_KEY = os.getenv("SECRET_KEY", "changeme")
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "1440"))
+N8N_WEBHOOK_URL = os.getenv(
+    "N8N_WEBHOOK_URL",
+    "https://primary-production-b9528.up.railway.app/webhook-test/chat",
+)
