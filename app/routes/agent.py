@@ -18,7 +18,7 @@ async def chat(
         try:
             response = await client.post(
                 N8N_WEBHOOK_URL,
-                json={"message": payload.message},
+                json={"message": payload.message, "session_id": str(current_user.id)},
                 timeout=30.0,
             )
             response.raise_for_status()
