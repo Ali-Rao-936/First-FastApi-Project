@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
 
 from app.database import Base, engine
-from app.models import product, user  # noqa: F401 — registers models with Base.metadata
+from app.models import chat_message, product, user  # noqa: F401 — registers models with Base.metadata
 from app.routes.agent import router as agent_router
 from app.routes.auth import router as auth_router
 from app.routes.products import router as products_router
