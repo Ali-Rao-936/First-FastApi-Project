@@ -30,10 +30,10 @@ def get_chat_messages(
         .all()
     )
     return [
-        ChatMessageRead(
+     ChatMessage(
             id=r.id,
             role="user" if r.message.get("type") == "human" else "assistant",
-            content=r.message.get("data", {}).get("content", ""),
+            content=r.message.get("content", ""),
         )
         for r in rows
     ]
