@@ -5,7 +5,7 @@ from app.database import Base
 
 
 class ChatMessage(Base):
-    __tablename__ = "n8n_chat_history"
+    __tablename__ = "n8n_chat_histories"
 
     id         = Column(Integer, primary_key=True, index=True)
     session_id = Column(String, nullable=False, index=True)
