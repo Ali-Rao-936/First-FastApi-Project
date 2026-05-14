@@ -25,8 +25,6 @@ def get_chat_messages(
         db.query(ChatMessage)
         .filter(ChatMessage.session_id == str(current_user.id))
         .order_by(ChatMessage.id.asc())
-        .offset(offset)
-        .limit(limit)
         .all()
     )
     return [
